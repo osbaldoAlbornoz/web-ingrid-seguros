@@ -1,0 +1,50 @@
+const fs = require('fs');
+let content = fs.readFileSync('app/page.tsx', 'utf8');
+
+// Colors
+content = content.replaceAll('bg-[#0A0F1C]', 'bg-slate-50');
+content = content.replaceAll('bg-[#0F172A]', 'bg-white');
+content = content.replaceAll('bg-[#0B1120]', 'bg-slate-50');
+content = content.replaceAll('text-white', 'text-slate-900');
+content = content.replaceAll('text-slate-400', 'text-slate-600');
+content = content.replaceAll('text-slate-300', 'text-slate-600');
+content = content.replaceAll('text-teal-100', 'text-teal-800');
+
+// Borders
+content = content.replaceAll('border-white/5', 'border-slate-200/50');
+content = content.replaceAll('border-white/10', 'border-slate-200');
+content = content.replaceAll('border-white/20', 'border-slate-300');
+
+// Backgrounds
+content = content.replaceAll('bg-white/5', 'bg-white/60');
+content = content.replaceAll('bg-white/[0.02]', 'bg-slate-50/50');
+content = content.replaceAll('bg-white/[0.04]', 'bg-slate-100/50');
+
+// Logo colors
+content = content.replaceAll('fill="#F8FAFC"', 'fill="#0F172A"');
+
+// Text Gradients
+content = content.replaceAll('from-[#00A896] via-teal-300 to-cyan-200', 'from-[#00A896] via-[#007064] to-teal-800');
+
+// Spotlight Card mix-blend
+content = content.replaceAll('mix-blend-screen', 'mix-blend-normal');
+
+// Special cases
+content = content.replaceAll('bg-white text-[#0A0F1C]', 'bg-slate-900 text-white');
+content = content.replaceAll('text-[#0A0F1C]', 'text-white'); // Fixes the button inside animated border
+content = content.replaceAll('mix-blend-overlay', ''); // For the grid and hero image overlay
+
+// Fix the SVG icons inside teal circles
+content = content.replaceAll('className="w-8 h-8 text-slate-900"', 'className="w-8 h-8 text-white"');
+
+// Fix lucide icon color issues in hero/benefits if any
+content = content.replaceAll('className="w-4 h-4 text-[#00A896]"', 'className="w-4 h-4 text-[#00A896]"');
+
+// Fix footer icons background
+content = content.replaceAll('bg-white/60 flex', 'bg-slate-200 flex');
+
+// Marquee gradient fades
+content = content.replaceAll('from-[#0A0F1C]', 'from-slate-50');
+
+fs.writeFileSync('app/page.tsx', content);
+console.log('Replacements done');

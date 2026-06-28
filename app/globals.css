@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .glass {
+    @apply bg-white/60 backdrop-blur-lg border border-slate-200 shadow-sm;
+  }
+  
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-2xl border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)];
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#00A896] to-[#007064];
+  }
+
+  /* Stripe-like Animated Grid Background */
+  .bg-grid-white {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, #000 70%, transparent 100%);
+  }
+
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .animate-ribbon-3 {
+    animation: ribbon3 20s ease-in-out infinite;
+  }
+  
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+.animated-border {
+  position: relative;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.animated-border::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: conic-gradient(transparent, transparent, transparent, #00A896);
+  animation: rotate 3s linear infinite;
+  transform-origin: 0 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+#gradient-canvas {
+    width: 100%;
+    height: 100%;
+    --gradient-color-1: #fb8500; /* Orange/Yellow */
+    --gradient-color-2: #ff006e; /* Pink */
+    --gradient-color-3: #8338ec; /* Violet */
+    --gradient-color-4: #3a86ff; /* Blue */
+}
+
+.gradient-ribbon-mask-linear {
+    mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
+}
+
+.gradient-ribbon-mask {
+  mask-image: radial-gradient(ellipse 80% 70% at 70% 50%, rgba(0,0,0,0.7) 20%, rgba(0,0,0,0.3) 50%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 70% 50%, rgba(0,0,0,0.7) 20%, rgba(0,0,0,0.3) 50%, transparent 80%);
+}
