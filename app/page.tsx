@@ -172,24 +172,24 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 50, damping: 20, delay: 0.2 }}
           >
-            <div className="relative rounded-[2.5rem] overflow-hidden glass-card p-2 shadow-2xl transform lg:rotate-2 hover:rotate-0 transition-transform duration-700 ease-out">
+            <div className="relative rounded-3xl md:rounded-[2.5rem] overflow-hidden glass-card p-2 shadow-2xl transform lg:rotate-2 hover:rotate-0 transition-transform duration-700 ease-out">
               <img 
                 src="/images/hero-family-clean.png" 
                 alt="Health and Life Insurance" 
-                className="w-full h-full object-cover rounded-[2.2rem]"
+                className="w-full h-auto rounded-2xl md:rounded-[2.2rem]"
               />
               
               <motion.div 
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.8, duration: 0.5, type: "spring" }}
-                className="absolute top-8 left-8 right-8 md:right-auto p-4 rounded-2xl glass border border-white/60 flex flex-col gap-1 z-20 backdrop-blur-xl shadow-2xl bg-white/40"
+                className="absolute top-4 right-4 md:top-8 md:left-8 md:right-auto p-4 rounded-2xl glass border border-[#00A896] flex flex-col gap-1 z-20 backdrop-blur-xl shadow-2xl bg-white/80"
               >
-                <h2 className="text-slate-900 font-black tracking-tight text-2xl md:text-3xl leading-none drop-shadow-sm">
-                  Health & Life
+                <h2 className="text-slate-900 font-black tracking-tight text-xl md:text-3xl leading-none drop-shadow-sm">
+                  Salud y Vida
                 </h2>
-                <span className="text-[#007064] font-bold tracking-widest text-sm uppercase drop-shadow-sm">
-                  Insurance
+                <span className="text-[#007064] font-bold tracking-widest text-xs md:text-sm uppercase drop-shadow-sm">
+                  Seguros
                 </span>
               </motion.div>
 
@@ -282,7 +282,7 @@ export default function Home() {
                 >
                   <SpotlightCard className="group h-full rounded-3xl glass-card border border-slate-200/50 bg-slate-50/50 hover:bg-slate-100/50 transition-colors">
                     <div className="h-48 relative overflow-hidden m-2 rounded-2xl">
-                      <Image src={service.img} alt={service.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                      <Image src={service.img} alt={service.title} fill className="object-cover object-top sm:object-center group-hover:scale-105 transition-transform duration-700" />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-50 via-slate-50/50 to-transparent" />
                     </div>
                     <div className="p-8 relative z-20">
